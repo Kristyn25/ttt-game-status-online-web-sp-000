@@ -27,8 +27,14 @@ def won?(board)
 
     if position_1 == position_2 && position_2 == position_3 && position_taken?(board, win_index_1)
       return win_combination
-    else
-      false
+    elsif !full?(board)
+      return false
+    elsif draw?(board)
+      return false
+    elsif !over?(board)
+      return false
+    else !winner?(board)
+      return false
     end
   end
 end
